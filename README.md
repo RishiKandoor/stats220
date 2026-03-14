@@ -24,5 +24,6 @@ A little about me:
 
 Here is a **link** to a website listing top *wii* games [Metacritic](https://www.metacritic.com/browse/game/wii/)
 
+This is a meme describing how i feel for every Exam and Test in uni ![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWd0cXFyYzJlYW85eXI2ejZxM3BxMWk0dDNqdHMyYmN1MjhrOTZzMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5TKgBEqYYPFjg3IZxJ/giphy.gif)
 
 A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
