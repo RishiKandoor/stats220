@@ -1,0 +1,69 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #edf4f5;
+  margin: 20px;
+}
+```
+
+## Youtube Log data
+
+This report summarises my YouTube viewing habits over time. The data includes video type, duration, and device used to watch the videos.
+
+
+```{r}
+library(tidyverse)
+# Loading data into R
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQFvuhjgBteZyZSuiKPKAe8lQ94Ti1PS7ci85xfXy6q-o33BUJecEfJ2GYFPplVJB3dPKp1jtAbzxIm/pub?output=csv")
+
+# Renaming columns / cleaning data
+latest_data <- logged_data %>%
+  rename(Duration = 2,
+         Type = 3,
+         Device = 4)
+
+# Numeric summaries
+mean_duration <- round(mean(latest_data$Duration), 0)
+max_duration <- max(latest_data$Duration)
+```
+
+### Video Types Watched
+```{r}
+# Bar chart: Type
+bar_graph_Type <- latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = Type), fill = "steelblue") +
+  labs(title = "Number of Videos by Type", 
+       x = "Type",
+       y = "Count") +
+  theme_minimal()
+  
+bar_graph_Type
+```
+
+### Devices Used for Watching
+```{r}
+# Bar chart: Device
+bar_graph_Device <- latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = Device), fill = "darkorange") +
+  labs(title = "Number of Videos by Device", 
+       x = "Device",
+       y = "Count") +
+  theme_minimal()
+
+bar_graph_Device
+
+```
+
+The average duration of mins watched on YouTube was `r mean_duration`, and the maximum video duration was `r max_duration`.
